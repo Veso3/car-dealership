@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure all form inputs have visible text */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+textarea,
+select {
+    color: #111827 !important; /* text-gray-900 */
+    background-color: #ffffff !important;
+}
+
+select option {
+    color: #111827 !important;
+    background-color: #ffffff !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    color: #111827 !important;
+    background-color: #ffffff !important;
+}
+
+/* Modern form input styling */
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af !important; /* text-gray-400 */
+}
+
+/* Smooth transitions for sidebar and interactions */
+@layer utilities {
+    .transition-sidebar {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* Pagination styling */
+.pagination {
+    @apply flex items-center justify-center gap-2;
+}
+
+.pagination a,
+.pagination span {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200;
+}
+
+.pagination a {
+    @apply bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:border-slate-300;
+}
+
+.pagination span.current {
+    @apply bg-slate-900 text-white border border-slate-900;
+}
+
+.pagination span.disabled {
+    @apply bg-slate-50 text-slate-400 border border-slate-200 cursor-not-allowed;
+}
